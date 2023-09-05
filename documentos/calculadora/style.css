@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(26, 22, 36);
+    color: whitesmoke;
+}
+
+div#calc {
+    margin: auto;
+    background-color: blue;
+    width: 500px;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
