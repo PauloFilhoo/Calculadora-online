@@ -5,8 +5,9 @@ body {
 
 div#calc {
     margin: auto;
-    background-color: blue;
-    width: 500px;
+    background-color: rgb(103, 103, 235);
+    width: 450px;
+    height: 250px;
     border-radius: 15px;
     padding: 15px;
     text-align: center;
@@ -14,4 +15,20 @@ div#calc {
 
 h1 {
     text-align: center;
+}
+
+button {
+    border-radius: 0.3em;
+    position: relative;
+    padding: 1em;
+    padding-bottom: 0.7em;
+    margin: -1px;
+}
+
+button#special {
+    background-color: orange;
+}
+
+p {
+    font-weight: bold;
 }

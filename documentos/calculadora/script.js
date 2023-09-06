@@ -77,7 +77,13 @@ function DeleteNum()
     {
         firstNumber = firstNumber.slice(0, -1)
         UpdateCalc()
-    } else 
+    }
+    else if (UpdateCalc() == true && secondNumber == '')
+    {
+        operation = ''
+        UpdateCalc()
+    }
+    else 
     {
         secondNumber = secondNumber.slice(0, -1)
         UpdateCalc()
