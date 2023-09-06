@@ -1,3 +1,6 @@
+@charset "UTF-8";
+
+
 body {
     background-color: rgb(26, 22, 36);
     color: whitesmoke;
@@ -31,4 +34,5 @@ button#special {
 
 p {
     font-weight: bold;
+    font-size: 22px;
 }

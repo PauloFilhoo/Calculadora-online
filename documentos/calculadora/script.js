@@ -15,46 +15,65 @@ function AddNumber(value)
     }
 }
 
-function Sum(result)
+function Sum()
 {
     operation = '+'
-    if (VerifyNumbers() == true)
+    VerifyNumbers()
+    if (VerifyNumbers())
     {
         return result = Number(firstNumber) + Number(secondNumber)
     }
 }
 
-function Sub(result)
+function Sub()
 {
     operation = '-'
-    if (VerifyNumbers() == true)
+    if (VerifyNumbers())
     {
         return result = Number(firstNumber) - Number(secondNumber)
     }
 }
 
-function Div(result)
+function Div()
 {
     operation = '/'
-    if (VerifyNumbers() == true)
+    if (VerifyNumbers())
     {
         return result = Number(firstNumber) / Number(secondNumber)
     }
 }
 
-function Mul(result)
+function Mul()
 {
     operation = '*'
-    if (VerifyNumbers() == true)
+    if (VerifyNumbers())
     {
         return result = Number(firstNumber) * Number(secondNumber)
     }
 }
 
-function VerifyNumbers(areNumbers) // Verificando se os números estão corretos e depois setando true ou false
+function Sqr()
 {
-    if (firstNumber != '' && secondNumber != '') return areNumbers = true
-    else return areNumbers = false
+    operation = '√'
+    if (!VerifyNumbers())
+    {
+        return result = Math.sqrt(Number(firstNumber), Number(2))
+    }
+}
+
+function Pot()
+{
+    operation = '^'
+    if (VerifyNumbers())
+    {
+        return result = Number(firstNumber) ** Number(secondNumber)
+    }
+}
+
+function VerifyNumbers() // Verificando se os números estão corretos e depois setando true ou false
+{
+    if (firstNumber != '' && secondNumber != '') return  true
+    else return false
 }
 
 function UpdateCalc()
@@ -96,6 +115,7 @@ function Clear()
     firstNumber = ''
     secondNumber = ''
     operation = ''
+    canPutNumber = true
 }
 
 function Result()
@@ -103,16 +123,22 @@ function Result()
 
     if (operation == '+')
     {
-        res.innerHTML = `${firstNumber} + ${secondNumber} = ${Sum(result)}`
+        res.innerHTML = `${firstNumber} + ${secondNumber} = ${Sum()}`
     } else if (operation == '-')
     {
-        res.innerHTML = `${firstNumber} - ${secondNumber} = ${Sub(result)}`
+        res.innerHTML = `${firstNumber} - ${secondNumber} = ${Sub()}`
     } else if (operation == '/')
     {
-        res.innerHTML = `${firstNumber} / ${secondNumber} = ${Div(result)}`
+        res.innerHTML = `${firstNumber} / ${secondNumber} = ${Div()}`
     } else if (operation == '*')
     {
-        res.innerHTML = `${firstNumber} * ${secondNumber} = ${Mul(result)}`
-    } 
+        res.innerHTML = `${firstNumber} * ${secondNumber} = ${Mul()}`
+    } else if (operation == '√')
+    {
+        res.innerHTML = `2${operation}${firstNumber} = ${Sqr()}`
+    } else if (operation == '^')
+    {
+        res.innerHTML = `${firstNumber} ^ ${secondNumber} = ${Pot()}`
+    }
 }
 
