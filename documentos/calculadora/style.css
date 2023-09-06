@@ -32,6 +32,14 @@ button#special {
     background-color: orange;
 }
 
+button#special:hover {
+    background-color: rgb(185, 121, 0);
+}
+
+button:hover {
+    background-color: antiquewhite;
+}
+
 p {
     font-weight: bold;
     font-size: 22px;
