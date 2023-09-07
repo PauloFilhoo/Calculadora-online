@@ -1,7 +1,8 @@
 let res = document.querySelector('p#result')
 let firstNumber = '',
     secondNumber = '',
-    operation = ''
+    operation = '',
+    canAddSecond = true
 
 function AddNumber(value)
 {
@@ -10,44 +11,46 @@ function AddNumber(value)
         firstNumber += value
         UpdateCalc()
     } else {
-        secondNumber += value
-        UpdateCalc()
+        if (canAddSecond)
+        {
+            secondNumber += value
+            UpdateCalc()
+        }
     }
 }
 
 function Sum()
 {
-    operation = '+'
-    VerifyNumbers()
     if (VerifyNumbers())
     {
+        operation = '+'
         return result = Number(firstNumber) + Number(secondNumber)
     }
 }
 
 function Sub()
 {
-    operation = '-'
     if (VerifyNumbers())
     {
+        operation = '-'
         return result = Number(firstNumber) - Number(secondNumber)
     }
 }
 
 function Div()
 {
-    operation = '/'
     if (VerifyNumbers())
     {
+        operation = '/'
         return result = Number(firstNumber) / Number(secondNumber)
     }
 }
 
 function Mul()
 {
-    operation = 'x'
     if (VerifyNumbers())
     {
+        operation = 'x'
         return result = Number(firstNumber) * Number(secondNumber)
     }
 }
@@ -55,24 +58,22 @@ function Mul()
 function Sqr()
 {
     operation = '√'
-    if (!VerifyNumbers())
-    {
-        return result = Math.sqrt(Number(firstNumber), Number(2))
-    }
+    canAddSecond = false
+    return result = Math.sqrt(Number(firstNumber), Number(2))
 }
 
 function Pot()
 {
-    operation = '^'
     if (VerifyNumbers())
     {
+        operation = '^'
         return result = Number(firstNumber) ** Number(secondNumber)
     }
 }
 
 function VerifyNumbers() // Verificando se os números estão corretos e depois setando true ou false
 {
-    if (firstNumber != '' && secondNumber != '') return  true
+    if (firstNumber != '' || secondNumber != '') return  true
     else return false
 }
 
@@ -100,6 +101,7 @@ function DeleteNum()
     else if (UpdateCalc() == true && secondNumber == '')
     {
         operation = ''
+        canAddSecond = true
         UpdateCalc()
     }
     else 
@@ -115,7 +117,7 @@ function Clear()
     firstNumber = ''
     secondNumber = ''
     operation = ''
-    canPutNumber = true
+    canAddSecond = true
 }
 
 function Result()
