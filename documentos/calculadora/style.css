@@ -6,14 +6,26 @@ body {
     color: whitesmoke;
 }
 
-div#calc {
+div#background {
     margin: auto;
-    background-color: rgb(103, 103, 235);
+    background-color: #6767eb;
     width: 450px;
-    height: 250px;
+    height: 300px;
     border-radius: 15px;
     padding: 15px;
     text-align: center;
+}
+
+div#calc {
+    padding-top: 10px;
+}
+
+div#divresult {
+    background-color: rgb(241, 248, 248);
+    height: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 5px 5px 6px #424297;
 }
 
 h1 {
@@ -26,6 +38,7 @@ button {
     padding: 1em;
     padding-bottom: 0.7em;
     margin: -1px;
+    box-shadow: 5px 5px 5px #424297;
 }
 
 button#special {
@@ -43,4 +56,6 @@ button:hover {
 p {
     font-weight: bold;
     font-size: 22px;
+    color: black;
 }
+
