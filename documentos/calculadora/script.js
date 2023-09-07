@@ -45,7 +45,7 @@ function Div()
 
 function Mul()
 {
-    operation = '*'
+    operation = 'x'
     if (VerifyNumbers())
     {
         return result = Number(firstNumber) * Number(secondNumber)
@@ -130,9 +130,9 @@ function Result()
     } else if (operation == '/')
     {
         res.innerHTML = `${firstNumber} / ${secondNumber} = ${Div()}`
-    } else if (operation == '*')
+    } else if (operation == 'x')
     {
-        res.innerHTML = `${firstNumber} * ${secondNumber} = ${Mul()}`
+        res.innerHTML = `${firstNumber} x ${secondNumber} = ${Mul()}`
     } else if (operation == '√')
     {
         res.innerHTML = `2${operation}${firstNumber} = ${Sqr()}`
